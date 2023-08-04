@@ -1,0 +1,50 @@
+{
+  "name": "ringierimu/attributable",
+  "description": "Reusable attributes for Laravel models",
+  "keywords": ["laravel", "trait", "attributes"],
+  "homepage": "https://github.com/ringierimu/attributable",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/ringierimu/attributable/issues",
+    "source": "https://github.com/ringierimu/attributable"
+  },
+  "authors": [
+    {
+      "name": "Christopner Pitt",
+      "email": "christopherp@ringier.co.za"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "RingierIMU\\Attributable\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/",
+      "Fixtures\\": "tests/fixtures/app"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RingierIMU\\Attributable\\AttributableServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.5",
+    "phpunit/phpunit": "^10.3"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php vendor/bin/testbench package:discover --ansi"
+    ]
+  }
+}
